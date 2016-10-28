@@ -77,13 +77,12 @@
 #include <boost/filesystem.hpp>
 
 using namespace boost :: filesystem;
-using namespace std :: ofstream;
-using namespace std :: ifstream;
 
 string gCFGFile;
 string gLogFile;
 uint32_t gLogMethod;
-ofstream *gLog = NULL;
+//ofstream *gLog = NULL;
+std::ofstream *gLog (NULL, std::ofstream::out);
 //ofstream *gLog(NULL, ios_base::in);
 //ofstream *gLog = new ofstream(NULL, ios_base::in);
 
