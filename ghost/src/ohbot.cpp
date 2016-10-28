@@ -82,7 +82,9 @@ string gCFGFile;
 string gLogFile;
 uint32_t gLogMethod;
 //ofstream *gLog = NULL;
-ofstream *gLog(NULL, ios_base::in);
+//ofstream *gLog(NULL, ios_base::in);
+ofstream *gLog = new ofstream(NULL, ios_base::in);
+
 
 COHBot *gGHost = NULL;
 CConfig CFG;
