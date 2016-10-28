@@ -46,7 +46,7 @@
 #include "bnetprotocol.h"
 #include "bncsutilinterface.h"
 
-#include <fstream>
+//#include <fstream>
 #include <signal.h>
 #include <stdlib.h>
 
@@ -81,7 +81,7 @@ using namespace boost :: filesystem;
 string gCFGFile;
 string gLogFile;
 uint32_t gLogMethod;
-ofstream *gLog = NULL;
+ofstream *gLog;
 COHBot *gGHost = NULL;
 CConfig CFG;
 
