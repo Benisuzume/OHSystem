@@ -1890,7 +1890,7 @@ uint32_t COHBot :: GetNewHostCounter( )
 void COHBot :: LoadRanks( )
 {
     string File = m_SharedFilesPath + "ranks.txt";
-    ifstream in;
+    std::ifstream in;
     in.open( File.c_str() );
     m_Ranks.clear();
     if( !in.fail( ) )
@@ -1928,7 +1928,7 @@ void COHBot :: LoadRanks( )
 void COHBot :: LoadInsult()
 {
     string File = m_SharedFilesPath + "insult.txt";
-    ifstream in;
+    std::ifstream in;
     in.open( File.c_str() );
     m_Insults.clear();
     if( !in.fail( ) )
@@ -1988,7 +1988,7 @@ string COHBot :: GetRoomName (string RoomID)
 void COHBot :: ReadRoomData()
 {
     string file = m_SharedFilesPath + "rooms.txt";
-    ifstream in;
+    std::ifstream in;
     in.open( file.c_str( ) );
     m_LanRoomName.clear();
     if( in.fail( ) )
