@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sudo apt-get install -qq libboost-all-dev build-essential gcc g++ libmysql++-dev libbz2-dev libgmp3-dev
 cd src/bncsutil/src/bncsutil
 make

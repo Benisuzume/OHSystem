@@ -46,6 +46,7 @@
 #include "bnetprotocol.h"
 #include "bncsutilinterface.h"
 
+#include <fstream.h>
 #include <signal.h>
 #include <stdlib.h>
 
