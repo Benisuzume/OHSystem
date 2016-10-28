@@ -81,7 +81,9 @@ using namespace boost :: filesystem;
 string gCFGFile;
 string gLogFile;
 uint32_t gLogMethod;
-ofstream *gLog( );
+//ofstream *gLog = NULL;
+ofstream *gLog(NULL, ios_base::in);
+
 COHBot *gGHost = NULL;
 CConfig CFG;
 
