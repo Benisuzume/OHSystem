@@ -12,4 +12,7 @@ cd ../
 mkdir bot
 cp src/ghost++ bot/
 cp config/* bot -R
-cp plugins bot/ -R 
+#cp plugins bot/ -R
+cp mapcfgs/ bot/ -R
+cp w3/ bot/ -R
+mkdir bot/maps/ bot/replays/ bot/savegames/
