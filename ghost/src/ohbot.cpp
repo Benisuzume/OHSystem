@@ -81,11 +81,7 @@ using namespace boost :: filesystem;
 string gCFGFile;
 string gLogFile;
 uint32_t gLogMethod;
-//ofstream *gLog = NULL;
 std::ofstream *gLog ( );
-//ofstream *gLog(NULL, ios_base::in);
-//ofstream *gLog = new ofstream(NULL, ios_base::in);
-
 
 COHBot *gGHost = NULL;
 CConfig CFG;
@@ -193,7 +189,7 @@ void CONSOLE_Print( string message )
     {
         if( gLogMethod == 1 )
         {
-            ofstream Log;
+            std::ofstream Log( );
             Log.open( gLogFile.c_str( ), ios :: app );
 
             if( !Log.fail( ) )
