@@ -287,8 +287,8 @@ int main( int argc, char **argv )
             // log method 2: open the log on startup, flush the log for every message, close the log on shutdown
             // the log file CANNOT be edited/moved/deleted while GHost++ is running
 
-            std::ofstream gLog ( );
-            gLog->open( gLogFile.c_str( ), ios :: app );
+            std::ofstream gLog;
+            gLog.open( gLogFile.c_str( ), ios :: app );
         }
     }
 
