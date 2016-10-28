@@ -81,7 +81,7 @@ using namespace boost :: filesystem;
 string gCFGFile;
 string gLogFile;
 uint32_t gLogMethod;
-std::ofstream *gLog ( );
+std::ofstream *gLog;
 
 COHBot *gGHost = NULL;
 CConfig CFG;
