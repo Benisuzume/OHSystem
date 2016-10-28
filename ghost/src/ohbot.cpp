@@ -1861,7 +1861,7 @@ void COHBot :: LoadRules( )
 {
     string File = m_SharedFilesPath + "rules.txt";
     string line;
-    ifstream myfile(File.c_str());
+    std::ifstream myfile(File.c_str());
     m_Rules.clear();
     if (myfile.is_open())
     {
