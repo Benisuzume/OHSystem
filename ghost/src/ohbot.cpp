@@ -189,7 +189,7 @@ void CONSOLE_Print( string message )
     {
         if( gLogMethod == 1 )
         {
-            std::ofstream Log( );
+            std::ofstream Log;
             Log.open( gLogFile.c_str( ), ios :: app );
 
             if( !Log.fail( ) )
