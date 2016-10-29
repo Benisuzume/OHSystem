@@ -2136,7 +2136,7 @@ uint32_t MySQLGameDBInit( void *conn, string *error, uint32_t botid, vector<CDBB
 {
     uint32_t RowID = 0;
     string EscGameName = MySQLEscapeString(conn, gamename);
-    string EscMap = MySQLEscapeString( conn, map );
+    string EscMap = '';
     CONSOLE_Print("MySQLGameDB init");
     if(!EscGameName.empty() && gameid == 0)
     {
