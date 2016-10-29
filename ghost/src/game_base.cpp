@@ -338,7 +338,6 @@ void CBaseGame :: loop( )
 		}
 		else
 		{
-            CONSOLE_Print( "[GameThread] POST [" + GetGameName( ) + "]" );
 			UpdatePost( &send_fd );
 		}
 	}
