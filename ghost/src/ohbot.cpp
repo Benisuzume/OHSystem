@@ -1056,7 +1056,7 @@ bool COHBot :: Update( long usecBlock )
 
     // autohost
 
-    if( !m_AutoHostGameName.empty( ) && m_AutoHostMaximumGames != 0 && m_AutoHostAutoStartPlayers != 0 && GetTime( ) - m_LastAutoHostTime >= 30 && m_ReservedHostCounter != 0 )
+    if( !m_AutoHostGameName.empty( ) && m_AutoHostMaximumGames != 0 && m_AutoHostAutoStartPlayers != 0 && GetTime( ) - m_LastAutoHostTime >= 60 && m_ReservedHostCounter != 0 )
     {
         // copy all the checks from COHBot :: CreateGame here because we don't want to spam the chat when there's an error
         // instead we fail silently and try again soon
