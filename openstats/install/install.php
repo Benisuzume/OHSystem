@@ -277,7 +277,8 @@ try {
 		<?php
 		write_value_of('$OS_INSTALLED', "$OS_INSTALLED", '1', "config.php");
 		}else{
-			echo "ERROR: ". $sth->errorInfo();
+			$err = $sth->errorInfo();
+			echo "MYSQL ERROR: ". $err[2];
 		 }
 		} 
 	
