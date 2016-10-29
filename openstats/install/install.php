@@ -262,8 +262,7 @@ try {
         $userLevel = 10; // 10 - root admin, 9 - administrator
 		$sth = $dbh->prepare("INSERT INTO oh_users(user_name, user_password, password_hash, user_email, user_joined, user_level,user_ip, confirm, can_comment) VALUES('$admin', '$pass', '$hash', '$email', '".time()."', '".$userLevel."', '".$_SERVER["REMOTE_ADDR"]."', '', '1')");
 		
-		$sth->execute();
-		$result = 1;
+		$result = $sth->execute();
 	    flush();
 		if ($result) {
 		?>
@@ -277,7 +276,9 @@ try {
 		<input type="button" class="menuButtons" value="Go to OpenStats 4" onclick="location.href='<?=$website?>'" />
 		<?php
 		write_value_of('$OS_INSTALLED', "$OS_INSTALLED", '1', "config.php");
-		} else echo "ERROR: mysql error!";
+		}else{
+			echo "ERROR: ". $sth->errorInfo();
+		 }
 		} 
 	
  	 if ($step<=3) { ?>
