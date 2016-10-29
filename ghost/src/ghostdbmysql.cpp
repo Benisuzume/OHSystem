@@ -1912,7 +1912,8 @@ bool MySQLPUp( void *conn, string *error, uint32_t botid, string name, uint32_t 
         time = 15551000;
     if( level == 3 || level == 2 )
         time = 2592000;
-
+    CONSOLE_Print( "[BNET EscName] "+ EscName);
+    CONSOLE_Print( "[BNET EscRealm] "+ EscRealm);
     if( EscRealm == "Garena")
     {
         string CQuery = "SELECT `user_level` from `oh_users` WHERE `bnet_username` = '" + EscName + "' AND `admin_realm` = 'Garena';";

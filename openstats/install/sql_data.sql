@@ -595,6 +595,7 @@ CREATE TABLE IF NOT EXISTS `oh_users` (
   `user_custom_permission` varchar(10) NOT NULL DEFAULT '0000000000',
   `user_level_expire` datetime NULL,
   `admin_realm` varchar(64) NULL,
+  `user_color` varchar(64) NULL,
   `expire_date` datetime NULL,
   `user_last_login` int(11) unsigned NOT NULL DEFAULT '0',
   `user_points_time` int(11) unsigned NULL,
