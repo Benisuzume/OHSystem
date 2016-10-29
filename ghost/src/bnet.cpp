@@ -2097,8 +2097,8 @@ void CBNET :: BotCommand(string Message, string User, bool Whisper, bool ForceRo
                                     QueueChatCommand( m_OHBot->m_Language->AutoHostEnabled( ), User, Whisper );
                                     delete m_OHBot->m_AutoHostMap;
                                     m_OHBot->m_AutoHostMap = new CMap( *m_OHBot->m_Map );
-                                    CONSOLE_Print(*m_OHBot->m_Map);
-                                    CONSOLE_Print(m_OHBot->m_AutoHostMap);
+                                    DEBUG_Print(*m_OHBot->m_Map);
+                                    DEBUG_Print(m_OHBot->m_AutoHostMap);
                                     if( GameType == 4 ){
                                         m_OHBot->m_AutoHostGameName = "[V]"+GameName;
                                     }else if( GameType == 5 ){
