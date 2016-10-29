@@ -2134,10 +2134,11 @@ uint32_t MySQLGameAdd( void *conn, string *error, uint32_t botid, string server,
 
 uint32_t MySQLGameDBInit( void *conn, string *error, uint32_t botid, vector<CDBBan *> players, string gamename, uint32_t gameid, uint32_t gamealias )
 {
-    CONSOLE_Print("MySQLGameDB init");
-    printf("%i", gameid);
     uint32_t RowID = 0;
     string EscGameName = MySQLEscapeString(conn, gamename);
+    CONSOLE_Print("MySQLGameDB init");
+    printf("%i", gameid);
+    printf("%s", EscGameName);
     if(!EscGameName.empty() && gameid == 0)
     {
         string Query = "INSERT INTO oh_games (botid, gamename, gamestatus, datetime) VALUES ("+UTIL_ToString(botid)+", '"+gamename+"', 0, CURRENT_TIMESTAMP());";
