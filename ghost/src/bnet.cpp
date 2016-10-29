@@ -1990,10 +1990,10 @@ void CBNET :: BotCommand(string Message, string User, bool Whisper, bool ForceRo
                 }
             }
         }
-/*
-        //
-        // !ANNOUNCE
-        //
+
+            //
+            // !ANNOUNCE
+            //
 
         else if( Command == "announce" && m_OHBot->m_CurrentGame && !m_OHBot->m_CurrentGame->GetCountDownStarted( ) )
         {
@@ -2033,7 +2033,7 @@ void CBNET :: BotCommand(string Message, string User, bool Whisper, bool ForceRo
                 }
             }
         }
-*/
+
         //
         // !AUTOHOST
         //
@@ -2097,23 +2097,23 @@ void CBNET :: BotCommand(string Message, string User, bool Whisper, bool ForceRo
                                     QueueChatCommand( m_OHBot->m_Language->AutoHostEnabled( ), User, Whisper );
                                     delete m_OHBot->m_AutoHostMap;
                                     m_OHBot->m_AutoHostMap = new CMap( *m_OHBot->m_Map );
-                                    CONSOLE_Print(GameName);
                                     if( GameType == 4 ){
                                         m_OHBot->m_AutoHostGameName = "[V]"+GameName;
                                     }else if( GameType == 5 ){
                                         m_OHBot->m_AutoHostGameName = "[R]"+GameName;
                                     }else{
                                         m_OHBot->m_AutoHostGameName = GameName;
-                                        m_OHBot->m_AutoHostOwner = User;
-                                        m_OHBot->m_AutoHostServer = m_Server;
-                                        m_OHBot->m_AutoHostGameType = GameType;
-                                        m_OHBot->m_AutoHostMaximumGames = MaximumGames;
-                                        m_OHBot->m_AutoHostAutoStartPlayers = AutoStartPlayers;
-                                        m_OHBot->m_LastAutoHostTime = GetTime( );
-                                        m_OHBot->m_AutoHostMatchMaking = false;
-                                        m_OHBot->m_AutoHostMinimumScore = 0.0;
-                                        m_OHBot->m_AutoHostMaximumScore = 0.0;
                                     }
+                                    m_OHBot->m_AutoHostOwner = User;
+                                    m_OHBot->m_AutoHostServer = m_Server;
+                                    m_OHBot->m_AutoHostGameType = GameType;
+                                    m_OHBot->m_AutoHostMaximumGames = MaximumGames;
+                                    m_OHBot->m_AutoHostAutoStartPlayers = AutoStartPlayers;
+                                    m_OHBot->m_LastAutoHostTime = GetTime( );
+                                    m_OHBot->m_AutoHostMatchMaking = false;
+                                    m_OHBot->m_AutoHostMinimumScore = 0.0;
+                                    m_OHBot->m_AutoHostMaximumScore = 0.0;
+
                                 }
                             }
                         }
