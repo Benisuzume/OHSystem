@@ -2139,7 +2139,7 @@ uint32_t MySQLGameDBInit( void *conn, string *error, uint32_t botid, vector<CDBB
     CONSOLE_Print("MySQLGameDB init");
     if(!EscGameName.empty() && gameid == 0)
     {
-        string Query = "INSERT INTO oh_games (botid, alias_id, gamename, gamestatus, datetime) VALUES ("+UTIL_ToString(botid)+", "+UTIL_ToInt32(botid)+", '"+gamename+"', 0, CURRENT_TIMESTAMP());";
+        string Query = "INSERT INTO oh_games (botid, alias_id, gamename, gamestatus, datetime) VALUES ("+UTIL_ToString(botid)+", "+UTIL_ToString(gamealias)+", '"+gamename+"', 0, CURRENT_TIMESTAMP());";
         CONSOLE_Print(Query);
         if( mysql_real_query( (MYSQL *)conn, Query.c_str( ), Query.size( ) ) != 0 )
             *error = mysql_error( (MYSQL *)conn );
