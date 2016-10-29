@@ -1601,7 +1601,8 @@ void CBNET :: BotCommand(string Message, string User, bool Whisper, bool ForceRo
       CONSOLE_Print("[PVPGN-Mode] User used command but bot is running in pvpgn-mode.");
       return;
     }
-    CONSOLE_Print( "[BNET LEVEL] "+ IsLevel( User ));
+    CONSOLE_Print( "[BNET LEVEL] " + IsLevel( User ));
+    CONSOLE_Print( "[BNET USER] " + User);
     if( ( IsLevel( User ) >= 5 || ForceRoot ) && m_OHBot->m_RanksLoaded )
     {
         string level = GetLevelName( IsLevel( User ) );
