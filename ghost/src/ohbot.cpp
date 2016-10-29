@@ -1623,7 +1623,7 @@ void COHBot :: ExtractScripts( )
 
 void COHBot :: CreateGame( CMap *map, unsigned char gameState, bool saveGame, string gameName, string ownerName, string creatorName, string creatorServer, uint32_t gameType, bool whisper, uint32_t m_HostCounter )
 {
-    CONSOLE_Print('CREATE');
+    CONSOLE_Print(gameName);
     if( !m_Enabled )
     {
         for( vector<CBNET *> :: iterator i = m_BNETs.begin( ); i != m_BNETs.end( ); ++i )
