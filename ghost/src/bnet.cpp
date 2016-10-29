@@ -3447,8 +3447,8 @@ uint32_t CBNET :: IsLevel( string name )
 
     for( vector<permission> :: iterator i = m_Permissions.begin( ); i != m_Permissions.end( ); ++i )
     {
-        printf("%lu\n", (unsigned long)i->player);
-        printf("%lu\n", (unsigned long)i->level);
+        printf("%lu\n", i->player);
+        printf("%lu\n", (unsigned int)i->level);
         if( i->player == name )
             return i->level;
     }
