@@ -1602,7 +1602,7 @@ void CBNET :: BotCommand(string Message, string User, bool Whisper, bool ForceRo
       return;
     }
     //CONSOLE_Print(IsLevel( User ));
-    printf("%lu\n", (unsigned long)IsLevel( User ));
+    printf("%lu\n", (unsigned long)10);
     CONSOLE_Print( "[BNET USER] " + User);
     if( ( IsLevel( User ) >= 5 || ForceRoot ) && m_OHBot->m_RanksLoaded )
     {
