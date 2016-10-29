@@ -1062,6 +1062,7 @@ bool COHBot :: Update( long usecBlock )
         // instead we fail silently and try again soon
         CONSOLE_Print("LOG");
         printf("%i", m_MaxGames);
+        printf("%i", m_Games);
         if( !m_ExitingNice && m_Enabled && !m_CurrentGame && m_Games.size( ) < m_MaxGames && m_Games.size( ) < m_AutoHostMaximumGames )
         {
             if( m_AutoHostMap->GetValid( ) )
@@ -1071,7 +1072,7 @@ bool COHBot :: Update( long usecBlock )
                 if( GameName.size( ) <= 31 )
                 {
                     CreateGame( m_AutoHostMap, GAME_PUBLIC, false, GameName, m_AutoHostOwner, m_AutoHostOwner, m_AutoHostServer, m_AutoHostGameType, false, m_HostCounter );
-
+                    CONSOLE_Print(m_CurrentGame);
                     if( m_CurrentGame )
                     {
                         if( m_ObserverFake )
@@ -1110,9 +1111,7 @@ bool COHBot :: Update( long usecBlock )
                     m_AutoHostMinimumScore = 0.0;
                     m_AutoHostMaximumScore = 0.0;
                 }
-            }
-            else
-            {
+            }else{
                 CONSOLE_Print( "[GHOST] stopped auto hosting, map config file [" + m_AutoHostMap->GetCFGFile( ) + "] is invalid" );
                 m_AutoHostGameName.clear( );
                 m_AutoHostOwner.clear( );
