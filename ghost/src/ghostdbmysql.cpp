@@ -1240,7 +1240,6 @@ vector<permission> MySQLPList( void *conn, string *error, uint32_t botid, string
     string EscServer = MySQLEscapeString( conn, server );
     vector<permission> PList;
     string Query = "SELECT `bnet_username`, `user_level`, `user_custom_permission`, `user_color`, `user_cname` FROM oh_users WHERE `user_bnet` >= 1 AND ( user_level_expire > NOW( ) OR user_level_expire = '0000-00-00 00:00:00' OR user_level_expire IS NULL ) AND `admin_realm` = '" + EscServer + "' AND ( `user_level` > 0 OR `user_cname` != '' )";
-    CONSOLE_Print(Query);
     if( mysql_real_query( (MYSQL *)conn, Query.c_str( ), Query.size( ) ) != 0 )
         *error = mysql_error( (MYSQL *)conn );
     else
@@ -1911,8 +1910,6 @@ bool MySQLPUp( void *conn, string *error, uint32_t botid, string name, uint32_t 
         time = 15551000;
     if( level == 3 || level == 2 )
         time = 2592000;
-    CONSOLE_Print( "[BNET EscName] "+ EscName);
-    CONSOLE_Print( "[BNET EscRealm] "+ EscRealm);
     if( EscRealm == "Garena")
     {
         string CQuery = "SELECT `user_level` from `oh_users` WHERE `bnet_username` = '" + EscName + "' AND `admin_realm` = 'Garena';";
