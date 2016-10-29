@@ -1060,7 +1060,8 @@ bool COHBot :: Update( long usecBlock )
     {
         // copy all the checks from COHBot :: CreateGame here because we don't want to spam the chat when there's an error
         // instead we fail silently and try again soon
-
+        CONSOLE_Print("LOG");
+        printf("%i", m_MaxGames);
         if( !m_ExitingNice && m_Enabled && !m_CurrentGame && m_Games.size( ) < m_MaxGames && m_Games.size( ) < m_AutoHostMaximumGames )
         {
             if( m_AutoHostMap->GetValid( ) )
