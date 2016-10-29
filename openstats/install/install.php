@@ -260,7 +260,7 @@ try {
 		$hash = generate_hash(16,1);
 		$pass = generate_password($pw, $hash);
         $userLevel = 10; // 10 - root admin, 9 - administrator
-		$sth = $dbh->prepare("INSERT INTO oh_users(user_name, user_password, password_hash, user_email, user_joined, user_level,user_ip, confirm, can_comment) VALUES('$admin', '$pass', '$hash', '$email', '".time()."', '".$userLevel."', '".$_SERVER["REMOTE_ADDR"]."', '', '1')");
+		$sth = $dbh->prepare("INSERT INTO oh_users(user_name, bnet_username, user_password, password_hash, user_email, user_joined, user_level,user_ip, confirm, can_comment) VALUES('$admin', '$admin', '$pass', '$hash', '$email', '".time()."', '".$userLevel."', '".$_SERVER["REMOTE_ADDR"]."', '', '1')");
 		
 		$result = $sth->execute();
 	    flush();
