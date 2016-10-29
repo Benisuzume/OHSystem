@@ -1238,9 +1238,9 @@ uint32_t MySQLpm( void *conn, string *error, uint32_t botid, string user, string
 vector<permission> MySQLPList( void *conn, string *error, uint32_t botid, string server )
 {
     string EscServer = MySQLEscapeString( conn, server );
-
+    CONSOLE_Print(EscServer);
     vector<permission> PList;
-    string Query = "SELECT `bnet_username`, `user_level`, `user_custom_permission`, `user_color`, `user_cname` FROM oh_users WHERE `user_bnet` >= '1' AND ( user_level_expire > NOW( ) OR user_level_expire = '0000-00-00 00:00:00' OR user_level_expire = '' ) AND `admin_realm` = '" + EscServer + "' AND ( `user_level` > 0 OR `user_cname` != '' )";
+    string Query = "SELECT `bnet_username`, `user_level`, `user_custom_permission`, `user_color`, `user_cname` FROM oh_users WHERE `user_bnet` >= '1' AND ( user_level_expire > NOW( ) OR user_level_expire = '0000-00-00 00:00:00' OR user_level_expire = NULL ) AND `admin_realm` = '" + EscServer + "' AND ( `user_level` > 0 OR `user_cname` != '' )";
 
     if( mysql_real_query( (MYSQL *)conn, Query.c_str( ), Query.size( ) ) != 0 )
         *error = mysql_error( (MYSQL *)conn );

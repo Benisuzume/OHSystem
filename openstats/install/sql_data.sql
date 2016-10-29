@@ -607,6 +607,7 @@ CREATE TABLE IF NOT EXISTS `oh_users` (
   `user_gender` tinyint(1) unsigned NULL,
   `user_lang` varchar(30) NULL,
   `user_clan` varchar(30) NULL,
+  `user_cname` varchar(100) NULL,
   `user_fbid` varchar(30) NULL,
   `phpbb_id` int(11) unsigned NULL,
   `smf_id` int(11) unsigned NULL,
