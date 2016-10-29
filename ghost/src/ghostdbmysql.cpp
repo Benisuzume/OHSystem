@@ -3163,6 +3163,7 @@ void CMySQLCallableGameDBInit :: operator( )( )
 
     if( m_Error.empty( ) )
         m_Result = MySQLGameDBInit( m_Connection, &m_Error, m_SQLBotID, m_Players, m_GameName, m_GameID, m_GameAlias );
+        printf("%i", m_Result);
 
     Close( );
 }
