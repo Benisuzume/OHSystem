@@ -395,7 +395,7 @@ if ( isset( $_GET["login"]) AND !is_logged() AND isset($_POST["register_"] ) ) {
 	
 	if (!empty($Country) ) $location = $Country; else $location = '';
 	  
-    $db->insert( OSDB_USERS, array(
+    $result = $db->insert( OSDB_USERS, array(
 	"user_name" => $username,
 	"user_password" => $password_db,
 	"password_hash" => $hash,
@@ -405,10 +405,7 @@ if ( isset( $_GET["login"]) AND !is_logged() AND isset($_POST["register_"] ) ) {
 	"user_level" => 0,
 	"user_ip" => $UserIP,
 	"can_comment" => 1,
-	"code" => $code
-                                 ));
-	  
-	  $result = 1;
+	"code" => $code));
 	  
 	  if ( $code=="" AND $result) {
 	    $uid = $db->lastInsertId(); 

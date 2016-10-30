@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `oh_stats_players` (
   `leaver_level` tinyint(4) NULL DEFAULT '0',
   `last_leaver_time` datetime NULL,
   `country` varchar(50) NULL,
-  `country_code` varchar(2) NOT NULL,
+  `country_code` varchar(2) DEFAULT NULL,
   `points` int(11) unsigned NULL,
   `points_bet` tinyint(6) unsigned NULL,
   `blacklisted` tinyint(1) unsigned NULL,
