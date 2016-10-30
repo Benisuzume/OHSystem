@@ -421,6 +421,9 @@ if ( isset( $_GET["login"]) AND !is_logged() AND isset($_POST["register_"] ) ) {
                 $_SESSION["logged"]    = time();
 
                 $LastLogin = $db->update(OSDB_USERS, array("user_last_login" => (int)time() ), "user_email = '".$email."'");
+            }else{
+                print_r($db->errorInfo());
+                die;
             }
         }catch (PDOException $exception){
             $exception->getMessage();
