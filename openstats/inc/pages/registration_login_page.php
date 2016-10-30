@@ -408,6 +408,9 @@ if ( isset( $_GET["login"]) AND !is_logged() AND isset($_POST["register_"] ) ) {
                     "user_level" => 0,
                     "user_ip" => $UserIP,
                     "can_comment" => 1,
+                    "confirm" => 0,
+                    "user_color" => '#6A9C66',
+                    "user_cname" => $username,
                     "code" => $code)
             );
 
