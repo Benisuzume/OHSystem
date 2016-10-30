@@ -1940,6 +1940,7 @@ bool MySQLPUp( void *conn, string *error, uint32_t botid, string name, uint32_t 
     }
 
     string CQuery = "SELECT `user_level` from `oh_users` WHERE `bnet_username` = '" + EscName + "' AND `admin_realm` = '" + EscRealm + "';";
+    CONSOLE_Print(CQuery);
     if( mysql_real_query( (MYSQL *)conn, CQuery.c_str( ), CQuery.size( ) ) != 0 )
         *error = mysql_error( (MYSQL *)conn );
     else
