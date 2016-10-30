@@ -395,36 +395,37 @@ if ( isset( $_GET["login"]) AND !is_logged() AND isset($_POST["register_"] ) ) {
 	
 	if (!empty($Country) ) $location = $Country; else $location = '';
 	  
-    $result = $db->insert( OSDB_USERS, array(
-	"user_name" => $username,
-	"bnet_username" => $username,
-	"user_password" => $password_db,
-	"password_hash" => $hash,
-	"user_email" => $email,
-	"user_joined" => (int) time(),
-	"user_location" => $location,
-	"user_level" => 0,
-	"user_ip" => $UserIP,
-	"can_comment" => 1,
-	"code" => $code));
-	  
-	  if ( $code=="" AND $result) {
-	    $uid = $db->lastInsertId(); 
-	    $_SESSION["user_id"] = $uid;
-	    $_SESSION["username"] = $username;
-	    $_SESSION["email"]    = $email;
-	    $_SESSION["level"]    = 0;
-	    $_SESSION["can_comment"]    = 1;
-	    $_SESSION["logged"]    = time();
-	  
-	    $LastLogin = $db->update(OSDB_USERS, array("user_last_login" => (int)time() ), 
-		                                                                     "user_email = '".$email."'");
-	  }else{
-	      $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-          print_r($db->errorInfo());
-          die;
-      }
-	  
+        try{
+            $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            $result = $db->insert( OSDB_USERS, array(
+                    "user_name" => $username,
+                    "bnet_username" => $username,
+                    "user_password" => $password_db,
+                    "password_hash" => $hash,
+                    "user_email" => $email,
+                    "user_joined" => (int) time(),
+                    "user_location" => $location,
+                    "user_level" => 0,
+                    "user_ip" => $UserIP,
+                    "can_comment" => 1,
+                    "code" => $code)
+            );
+
+            if ( $code=="" AND $result) {
+                $uid = $db->lastInsertId();
+                $_SESSION["user_id"] = $uid;
+                $_SESSION["username"] = $username;
+                $_SESSION["email"]    = $email;
+                $_SESSION["level"]    = 0;
+                $_SESSION["can_comment"]    = 1;
+                $_SESSION["logged"]    = time();
+
+                $LastLogin = $db->update(OSDB_USERS, array("user_last_login" => (int)time() ), "user_email = '".$email."'");
+            }
+        }catch (PDOException $exception){
+            $exception->getMessage();
+        }
+
 	  //SEND EMAIL
 	  if ($UserActivation == 1) {
 	  	    $message = $lang["email_activation1"]." $username,<br /><br />";
