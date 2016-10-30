@@ -421,6 +421,8 @@ if ( isset( $_GET["login"]) AND !is_logged() AND isset($_POST["register_"] ) ) {
 		                                                                     "user_email = '".$email."'");
 	  }else{
 	      $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+          print_r($db->errorInfo());
+          die;
       }
 	  
 	  //SEND EMAIL
