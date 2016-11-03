@@ -924,7 +924,7 @@ bool CBNET :: Update( void *fd, void *send_fd )
     if( m_Socket->HasError( ) &&! m_FakeRealm )
     {
         // the socket has an error
-
+        CONSOLE_Print(m_Socket->GetError( ));
         CONSOLE_Print( "[BNET: " + m_ServerAlias + "] disconnected from battle.net due to socket error" );
 
         if( m_Socket->GetError( ) == ECONNRESET && GetTime( ) - m_LastConnectionAttemptTime <= 15 ) {
