@@ -147,7 +147,7 @@ if ( isset($_GET["activate"]) AND is_numeric($_GET["activate"]) ) {
 	  $sql_update_pw 
 	  WHERE user_id ='".$id."' LIMIT 1 ";
 	  
-	  if ( isset($_GET["add"]) ) $sql = "INSERT INTO ".OSDB_USERS."(user_name, alias_id, user_email, user_password, password_hash, user_joined, bnet_username, user_bnet, user_realm, user_clan, blacklisted, user_level_expire, user_level) VALUES('".$name."', '".$alias_id."', '".$email."', '".$password_db."', '".$hash."', '".time()."', '".$bnet."', '".$user_bnet."', '".$user_realm."', '".$user_clan."', '".$blacklisted."', '".$user_level_expire."', ".$level.")";
+	  if ( isset($_GET["add"]) ) $sql = "INSERT INTO ".OSDB_USERS."(user_name, alias_id, user_email, user_password, password_hash, user_joined, bnet_username, user_bnet, user_realm, user_clan, blacklisted, user_level_expire, user_level, user_ip, confirm) VALUES('".$name."', '".$alias_id."', '".$email."', '".$password_db."', '".$hash."', '".time()."', '".$bnet."', '".$user_bnet."', '".$user_realm."', '".$user_clan."', '".$blacklisted."', '".$user_level_expire."', ".$level.", '".$_SERVER['HTTP_X_FORWARDED_FOR']."', 1)";
 	  
 	  $sth = $db->prepare("SELECT * FROM ".OSDB_USERS." WHERE (user_name) = ('".$name."') AND user_id!='".$id."' ");
 	  $result = $sth->execute();
