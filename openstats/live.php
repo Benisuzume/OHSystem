@@ -48,7 +48,6 @@
 	WHERE gamestatus<=2 
 	AND gametime>=NOW()-INTERVAL 2 hour
 	$sql
-	GROUP BY gameid
     ORDER BY gamestatus ASC, gametime DESC 
 	$LIMIT" );
     $result = $sth->execute();
