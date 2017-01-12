@@ -57,10 +57,10 @@ clean:
 	rm -f $(OBJS) $(COBJS) $(LIB)
 
 $(OBJS): %.o: %.cpp
-	$(C++) -o $@ $(CFLAGS) CXXFLAGS -c $<
+	$(C++) -o $@ $(CFLAGS) $(CXXFLAGS) -c $<
 
 $(COBJS): %.o: %.c
-	$(CC) -o $@ $(CFLAGS) CXXFLAGS -c $<
+	$(CC) -o $@ $(CFLAGS) $(CXXFLAGS) -c $<
 
 $(LIB): $(OBJS) $(COBJS)
 
